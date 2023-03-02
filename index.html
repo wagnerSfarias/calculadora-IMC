@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Calculo IMC</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="container-left">
+            <img src="assets/banner.png" alt="ilustração-da-balança">
+            <h2>O IMC (Índice de Massa Corporal) é um padrão internacional
+                de cálculo da obesidade de um indivíduo
+                adotado pela OMS (Organização Mundial da Saúde).</h2>
+
+            <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_massa_corporal" target="_blank">Saiba mais</a>
+
+        </section>
+        <section class="container-right">
+            <form id="form">
+                <h1>Calculadora IMC</h1>
+                <p>Peso(kg)</p>
+                <input type="text" name="peso" id="weight" placeholder="Exemplo: 66">
+
+                <p>Altura(m)</p>
+                <input type="text" name="altura" id="height" placeholder="Exemplo: 1.80">
+
+                <button type="submit">Calcular IMC</button>
+                <div id="resultado">
+                    <span id="level">Peso Normal</span>
+                    <p id="imc">IMC = 22.30</p>
+                </div>
+            </form>
+        </section>
+    </div>
+    
+</body>
+<script src="./script.js"></script>
+</html>
