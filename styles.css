@@ -41,11 +41,12 @@ h2 {
     font-weight: 400;
     line-height: 40px;
 }
-a{
+
+.link-more {
     font-size: 24px;
     color: #F3D340;
     cursor: pointer;
-    margin-left: 40% ;
+    margin-left: 40%;
     text-decoration: none;
 }
 
@@ -80,7 +81,7 @@ input {
     border-radius: 5px 0 0 5px;
 }
 
-button {
+#btn-calc {
     background: #F3D340;
     border: 0;
     border-radius: 10px;
@@ -90,10 +91,23 @@ button {
     font-size: 23px;
     width: 200px;
     margin: 0 auto;
+    cursor: pointer;
 }
 
-#resultado {
-    margin-top: 30px;
+#btn-calc:hover {
+    opacity: 0.9;
+}
+
+#btn-calc:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+#btn-calc:active {
+    opacity: 0.7;
+}
+
+#result {
     border: 3px solid #ff3535;
     border-radius: 10px;
     display: none;
@@ -105,10 +119,58 @@ button {
     margin: 30px auto;
 }
 
-#resultado span {
+#result span {
     font-size: 23px;
     padding: 10px;
     font-weight: 600;
+}
+
+#alert {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 70%;
+    background-color: rgba(122, 122, 122, 0.894);
+    color: #FFF;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border-top:5px solid #F3D340;
+}
+
+#alert h2 {
+    font-size: 30px;
+    font-weight: bold;
+    border: 3px solid #F3D340;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 30px;
+    padding-top: 8px;
+}
+
+#alert p {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+#close {
+    font-size: 20px;
+    width: 70px;
+    background-color: #F3D340;
+    margin-bottom: 20px;
+    border: 0;
+    color: #979AA1;
+    border-radius: 10px;
+    padding: 15px 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+#close:hover {
+    opacity: 0.9;
+}
+#close:active{
+    opacity: 0.7;
 }
 
 @media screen and (max-width:940px) {
@@ -123,12 +185,20 @@ button {
         margin: 5% 10%;
     }
 
+    img {
+        width: 70%;
+        margin: 0 15%;
+    }
+
+
+    #alert {
+        position: relative;
+        top: 180px;
+    }
+
 }
 
 @media screen and (max-width:790px) {
-    img {
-        width: 60%;
-    }
 
     h2 {
         font-size: 20px;
@@ -136,46 +206,76 @@ button {
         line-height: 30px;
     }
 
-   
+    #alert {
+        top: 135px;
+    }
+
+    #alert h2 {
+        padding-top: 10px;
+    }
+
+
 }
+
 @media screen and (max-width:480px) {
     h2 {
         font-size: 19px;
         line-height: 20px;
     }
-    a{
+
+    .link-more {
         font-size: 20px;
     }
+
     p {
         font-size: 20px;
         padding-bottom: 10px;
     }
+
     h1 {
         margin-bottom: 25px;
         font-size: 25px;
     }
-    
+
     input {
         border-left: 8px solid #F3D340;
         padding: 10px 5px;
         margin-bottom: 30px;
         font-size: 19px;
     }
-    
-    button {
+
+    #btn-calc {
         padding: 10px 0;
         font-size: 20px;
         width: 150px;
+        margin: 0 auto 30px;
+        border-radius: 0;
+    }
+
+    #result {
+        padding: 5px;
         margin: 0 auto;
     }
-    
-    #resultado {
-        padding: 5px;
-    }
-    
-    #resultado span {
+
+    #result span {
         font-size: 20px;
         padding: 5px;
         font-weight: 500;
     }
+
+    #alert {
+        top: 90px;
+        left: 10%;
+        width: 80%;
+    }
+
+    #alert h2 {
+        padding-top: 15px;
+    }
+
+    #alert p {
+        font-size: 19px;
+        margin: 10px 0;
+    }
+
 }

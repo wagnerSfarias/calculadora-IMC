@@ -20,7 +20,7 @@
                 de cálculo da obesidade de um indivíduo
                 adotado pela OMS (Organização Mundial da Saúde).</h2>
 
-            <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_massa_corporal" target="_blank">Saiba mais</a>
+            <a class="link-more" href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_massa_corporal" target="_blank">Saiba mais</a>
 
         </section>
         <section class="container-right">
@@ -32,15 +32,21 @@
                 <p>Altura(m)</p>
                 <input type="text" name="altura" id="height" placeholder="Exemplo: 1.80">
 
-                <button type="submit">Calcular IMC</button>
-                <div id="resultado">
+                <button type="submit" id="btn-calc">Calcular</button>
+                <div id="result">
                     <span id="level">Peso Normal</span>
                     <p id="imc">IMC = 22.30</p>
                 </div>
             </form>
         </section>
     </div>
-    
+
+    <div id="alert">
+       <h2>!</h2>
+       <p>Por favor insira seu peso e altura !!!</p>
+       <button id="close">OK</button>
+    </div>
+  
 </body>
 <script src="./script.js"></script>
 </html>

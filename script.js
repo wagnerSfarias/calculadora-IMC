@@ -1,32 +1,44 @@
 const form = document.getElementById("form");
+const btnClosed = document.getElementById("close")
+
+btnClosed.addEventListener('click', () => {
+
+    document.getElementById("alert").style.display = 'none'
+    document.getElementById("weight").disabled = false
+    document.getElementById("height").disabled = false
+    document.getElementById("btn-calc").disabled = false
+    document.querySelector(".link-more").style.pointerEvents = 'auto'
+
+})
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-  
+
     const weight = document.getElementById("weight").value;
     const height = document.getElementById("height").value;
-    
+
     var heightValue = parseFloat(height.replace(',', '.'));
     var weightValue = parseFloat(weight.replace(',', '.'));
 
     const imc = (weightValue / (heightValue * heightValue)).toFixed(2);
-    const divResult = document.getElementById("resultado")
+    const divResult = document.getElementById("result")
     const span = document.getElementById("level")
     const pImc = document.getElementById("imc")
 
+
     if (weight == '' || height == '') {
-        alert('Por favor inserir seu peso e altura !!!!!')
 
+        document.getElementById("alert").style.display = "flex"
+        divResult.style.display = 'none'
 
-        divResult.style.display = 'flex';
-        span.innerHTML = '';
-        divResult.style.background = 'transparent';
-        divResult.style.borderColor = 'transparent';
-        span.style.color = '#FFF'
-        pImc.innerHTML = ''
+        document.getElementById("weight").disabled = true
+        document.getElementById("height").disabled = true
+        document.getElementById("btn-calc").disabled = true
+        document.querySelector(".link-more").style.pointerEvents = 'none'
+
         return false;
     } else {
-       
+
         if (imc < 17) {
             divResult.style.display = 'flex';
             span.innerHTML = 'Muito abaixo do peso';
@@ -76,7 +88,7 @@ form.addEventListener('submit', (e) => {
         else if (imc > 30 && imc < 34.99) {
 
             divResult.style.display = 'flex';
-            span.innerHTML = 'Obesidade grau I';
+            span.innerHTML = 'Obesidade Grau I';
             divResult.style.borderColor = 'rgba(246, 48, 48, 0.745)';
             divResult.style.background = 'rgba(246, 48, 48, 0.745)';
             span.style.color = '#FFF';
@@ -88,7 +100,7 @@ form.addEventListener('submit', (e) => {
         else if (imc > 35 && imc < 39.99) {
 
             divResult.style.display = 'flex';
-            span.innerHTML = 'Obesidade grau II';
+            span.innerHTML = 'Obesidade Grau II';
             divResult.style.borderColor = 'rgba(255, 22, 22, 0.745)';
             divResult.style.background = 'rgba(255, 22, 22, 0.745)';
             span.style.color = '#FFF';
@@ -100,7 +112,7 @@ form.addEventListener('submit', (e) => {
         else if (imc > 40) {
 
             divResult.style.display = 'flex';
-            span.innerHTML = 'Obesidade grau III';
+            span.innerHTML = 'Obesidade Grau III';
             divResult.style.borderColor = '#ff2727';
             divResult.style.background = '#ff2727';
             span.style.color = '#FFF';
